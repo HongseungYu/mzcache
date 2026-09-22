@@ -125,6 +125,11 @@ owned by you instead of root. **Section 7 cannot run in the container**: the
 Android app needs the Gradle/SDK stack and the demo needs a desktop session, so
 build and record that one on the host.
 
+The image is also archived on Zenodo
+([doi:10.5281/zenodo.22905496](https://doi.org/10.5281/zenodo.22905496)) as
+`mzcache-ae-v0.9.tar.gz`. If Docker Hub is unavailable, download it from there
+and run `docker load -i mzcache-ae-v0.9.tar.gz` instead of `docker pull`.
+
 **Option B — build from scratch.** On a clean Ubuntu (22.04/24.04):
 
 ```bash
@@ -178,6 +183,11 @@ flash-attn {on, off}. Either download or regenerate:
   Expect ~25 min on a good link. The script then verifies the archive before
   unpacking, which on an 18 GB zip takes a few minutes with no output — it has not
   hung.
+  The same `states.zip` is archived on Zenodo
+  ([doi:10.5281/zenodo.22905496](https://doi.org/10.5281/zenodo.22905496)). If the
+  Google Drive download fails, download it from there instead, put it in the
+  repository root, and re-run `get_states.sh`: it uses the local zip. SHA-256:
+  `b3eca80d1536c0c108661232c985a137ca320b1cf5e72e014e0ca38fd2f4efa7`.
 - **Option 2 — regenerate on a GPU server** (deterministic, seed-pinned). Run this
   whole block **on the GPU server** — a separate machine with an NVIDIA GPU and
   this repo checked out — then copy the states back to the phone host:
