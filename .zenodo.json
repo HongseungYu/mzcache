@@ -1,0 +1,25 @@
+{
+  "title": "mzCache: On-Device LLM Memory Management under Multitasking (MobiCom 2026 Artifact)",
+  "upload_type": "software",
+  "description": "<p>Artifact for the MobiCom 2026 paper \"mzCache: On-Device LLM Memory Management under Multitasking\".</p><p>This artifact contains the full implementation of mzCache (a restoration-oriented memory management system for on-device LLM inference, implemented as a fork of llama.cpp), together with the two baselines used in the paper (Partial Offload and OS Paging), the Android application used for the real-world evaluation, and scripts that reproduce the paper's key results on commodity smartphones. EVALUATION.md at the repository root is the step-by-step guide.</p>",
+  "creators": [
+    {"name": "Yu, Hongseung", "affiliation": "Seoul National University", "orcid": "0009-0006-0864-876X"},
+    {"name": "Kim, Minsung", "affiliation": "Seoul National University", "orcid": "0009-0002-3225-8009"},
+    {"name": "Park, Jongseok", "affiliation": "UC Berkeley", "orcid": "0000-0003-3910-7182"},
+    {"name": "Lee, Kyunghan", "affiliation": "Seoul National University", "orcid": "0000-0001-8647-1476"}
+  ],
+  "license": "mit",
+  "access_right": "open",
+  "related_identifiers": [
+    {"identifier": "10.5281/zenodo.22905496", "relation": "isSupplementedBy", "resource_type": "dataset"}
+  ],
+  "keywords": [
+    "on-device LLM",
+    "LLM inference",
+    "KV cache",
+    "memory management",
+    "mobile multitasking",
+    "Android",
+    "llama.cpp"
+  ]
+}
