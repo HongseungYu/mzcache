@@ -602,11 +602,20 @@ Run the 3-round workload yourself — once per variant, ~14 min each:
 ./scripts/mzcache/record_demo_rounds.sh mzcache     # or: baseline
 ```
 
+To run the paper's 10 rounds instead, override `ROUNDS` (default 3) on the
+command line — no script edits needed. The recording length and the final
+`RESULT` line follow it; allow ~47 min per variant:
+
+```bash
+ROUNDS=10 ./scripts/mzcache/record_demo_rounds.sh mzcache     # or: baseline
+```
+
 It drives the app-switch gauntlet on the phone, mirrors the screen (scrcpy) next
 to a live memory trace (`mem_trace*.py`), and screen-records the pair to
 `/tmp/mz_rounds_<variant>_<ts>.mp4`. The trace marks the moment the process is
-LMK-killed; timing knobs (rounds, dwell, fps) are the variables at the top of the
-script. The side-by-side video above was assembled from the two clips afterwards.
+LMK-killed; the other timing knobs (`DWELL_S`, `FPS`, ...) are likewise
+environment variables read at the top of the script. The side-by-side video above
+was assembled from the two clips afterwards.
 
 **The verdict is the last line the script prints**, and it is the Fig. 15 claim:
 
