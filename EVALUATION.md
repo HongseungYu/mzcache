@@ -523,13 +523,11 @@ itself — and restores your own profile afterwards.
 
 ## 7. Real-world Android app (paper Fig. 15)
 
-mzCache's real-world benefit — surviving heavy multitasking pressure by evicting
-KV (and weights) on `onTrimMemory` and restoring on return, where the OS-paging
-baseline is LMK-killed and cold-starts — is captured in the demo video below
-(`real_world_demo_30x.mp4`, 30× speed). It stacks the mzCache and OS-paging
-variants under the same app-switching workload with a live memory trace: mzCache
-steps its GPU working set down on each backgrounding and swaps back in on return
-(fast first token), while the OS-paging app is LMK-killed and reloads cold.
+The demo video below (`real_world_demo_30x.mp4`, 30× speed) runs the mzCache and
+OS-paging apps under the same app-switching workload, with a live memory trace.
+mzCache frees its GPU memory on `onTrimMemory` each time it goes to the
+background and restores it on return, so the first token comes back quickly.
+The OS-paging app is killed by the low-memory killer and reloads from scratch.
 
 https://github.com/user-attachments/assets/3925f5db-1e82-4838-b98f-e9cf8accd564
 
